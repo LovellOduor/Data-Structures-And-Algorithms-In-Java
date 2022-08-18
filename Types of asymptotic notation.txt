@@ -1,0 +1,10 @@
+Types of Asymptotic Notations
+1. Omega Ω Notation
+- The formal way of expressing the lower bound of an algorithm's runtime.
+- This means, for any input this notation determines the best amount of time an algorithm can take to complete.
+2. Big O Notation
+- Expresses the upper bound of an algorithms running time.
+- Upper bound means for any given input, this notation determines longest amount of time an algorithm can take to complete.
+3. Theta Θ Notation
+- Expresses both upper bound and lower bound of an algorithm's running time.
+- This means the average amount of time an algorithm takes to complete.
