@@ -1,0 +1,7 @@
+Singly Linked List
+A singly Linked list is a data structure used to store a collection of nodes and 
+it has the following properties:
+- Contains a sequence of nodes.
+- Each node has data  and a reference to the next node on the list.
+- First node is the head node.
+- Last node points to null.
