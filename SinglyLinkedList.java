@@ -173,6 +173,7 @@ public class SinglyLinkedList{
     }
     return mainPtr;
  }
+
  // Remove duplicates from a sorted linked list
     public void removeDuplicates(){
         if(head == null){
@@ -270,6 +271,45 @@ public class SinglyLinkedList{
            return null;
     }
 
+// remove a loop from a singly linked list 
+     public void removeLoop(){
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
+        while(slowPtr.next != null && fastPtr.next.next != null){
+            slowPtr = slowPtr.next;
+            fastPtr = fastPtr.next.next;
+            if(slowPtr == fastPtr){
+                ListNode loopStart = head;
+                while(loopStart.next != slowPtr.next){
+                    loopStart = loopStart.next;
+                    slowPtr = slowPtr.next;
+                }
+                slowPtr.next = null;
+            }
+        }
+     }
+     // Merging two sorted linked lists
+    public static merge(ListNode a, ListNode b){
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
+        while(a!=null && b!=null){
+            if(a.data <= b.data){
+                tail.next = a;
+                a = a.next;
+            }else{
+                tail.next = b;
+                b = b.next;
+            }
+            tail = tail.next;
+        }
+        if(a == null){
+            tail.next = b;
+        }else{
+            tail.next = a;
+        }
+        head = dummy.next;
+    }
+
     public static void main(String[] args){
         // Create the Singly Linked List and initialize the head
         SinglyLinkedList sll = new SinglyLinkedList();
@@ -312,11 +352,9 @@ public class SinglyLinkedList{
         */
         
         sll.createLoopInLinkedList();
-        System.out.println(sll.containsLoop());
-        ListNode loopStart = sll.startListNodeInALoop();
-        System.out.println(loopStart.data);
-
-        
-        
+       // System.out.println(sll.containsLoop());
+       // ListNode loopStart = sll.startListNodeInALoop();
+        sll.removeLoop();
+        sll.displayList();
     }
 }
