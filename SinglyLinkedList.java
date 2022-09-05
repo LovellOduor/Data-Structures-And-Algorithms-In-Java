@@ -57,10 +57,10 @@ public class SinglyLinkedList{
             return;
         }
         ListNode current = head;
-        while(current != null){
+        while(current.next != null){
             current = current.next;
         }
-        current=newNode;
+        current.next = newNode;
     }
     // Insert value at any position in the list
     public void insert(int position,int value){
@@ -148,6 +148,7 @@ public class SinglyLinkedList{
         }
         head = previous;
     }
+
     // Find the nth node from the end of a singly linked list
  public ListNode getNthNodeFromTheEnd(int n){
     if(head == null){
@@ -289,7 +290,7 @@ public class SinglyLinkedList{
         }
      }
      // Merging two sorted linked lists
-    public static merge(ListNode a, ListNode b){
+    public static ListNode merge(ListNode a, ListNode b){
         ListNode dummy = new ListNode(0);
         ListNode tail = dummy;
         while(a!=null && b!=null){
@@ -307,7 +308,38 @@ public class SinglyLinkedList{
         }else{
             tail.next = a;
         }
-        head = dummy.next;
+        return dummy.next;
+    }
+    // Adding two SinglyLinkedList - Make sure the lists are first reversed
+    public static ListNode add(ListNode a,ListNode b){
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
+        int carry = 0;
+        int sum = 0;
+        int x = 0;
+        int y = 0;
+        while(a!= null || b!=null){
+           if(a!=null){
+            x = a.data;
+            a = a.next;
+           }else{
+            x = 0;
+           }
+           if(b!=null){
+            y = b.data;
+            b = b.next;
+           }else{
+            y = 0;
+           } 
+           sum =  x + y + carry;
+           carry = sum/10;
+           tail.next = new ListNode(sum%10);
+           tail = tail.next;
+        }
+        if(carry > 0){
+            tail.next = new ListNode(carry);
+        }
+        return dummy.next;
     }
 
     public static void main(String[] args){
@@ -328,15 +360,15 @@ public class SinglyLinkedList{
         // sll.deleteFirst();
         // sll.displayList();
         // sll.delete(2);
-        //sll.reverse();
-        //sll.displayList();
-       // sll.reverse();
-        //sll.displayList();
-       // sll.reverse();
-       // sll.displayList();
-       // System.out.println(sll.search(5));
-        //System.out.println(" The length is "+sll.length());
-       /* sll.displayList();
+        // sll.reverse();
+        // sll.displayList();
+        // sll.reverse();
+        // sll.displayList();
+        // sll.reverse();
+        // sll.displayList();
+        // System.out.println(sll.search(5));
+        // System.out.println(" The length is "+sll.length());
+        /* sll.displayList();
         ListNode n = sll.getNthNodeFromTheEnd(2);
         System.out.println(n.data);
         */
@@ -350,11 +382,48 @@ public class SinglyLinkedList{
         sll.removeKey(1); 
         sll.displayList(); 
         */
-        
+        /*
         sll.createLoopInLinkedList();
        // System.out.println(sll.containsLoop());
        // ListNode loopStart = sll.startListNodeInALoop();
         sll.removeLoop();
         sll.displayList();
+        */
+        /*
+        SinglyLinkedList sll1 = new SinglyLinkedList();
+        sll1.insertLast(1);
+        sll1.insertLast(4);
+        sll1.insertLast(8);
+        SinglyLinkedList sll2 = new SinglyLinkedList();
+        sll2.insertLast(3);
+        sll2.insertLast(5);
+        sll2.insertLast(8);
+        sll2.insertLast(9);
+        sll2.insertLast(14);
+        sll2.insertLast(18);
+        sll1.displayList();
+        sll2.displayList();
+
+        SinglyLinkedList result = new SinglyLinkedList();
+        result.head = merge(sll1.head,sll2.head);
+        result.displayList();
+        */
+        // ADDING TWO SINGLY LINKED LISTS
+        /*
+        SinglyLinkedList sll1 = new SinglyLinkedList();
+        sll1.insertLast(1);
+        sll1.insertLast(0);
+        sll1.insertLast(1);
+        SinglyLinkedList sll2 = new SinglyLinkedList();
+        sll2.insertLast(1);
+        sll2.insertLast(0);
+        sll2.insertLast(9);
+        SinglyLinkedList result = new SinglyLinkedList();
+        result.head = add(sll1.head,sll2.head);
+        result.displayList();
+        */
+
+
+
     }
 }
