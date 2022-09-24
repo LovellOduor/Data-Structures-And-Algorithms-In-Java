@@ -1,4 +1,5 @@
 public class OneDimensionalArray{
+
         // Printing the elements of an array
         public void printArray(int arr[]){
             int n = arr.length;
@@ -23,7 +24,7 @@ public class OneDimensionalArray{
                   if(arr[i]%2 != 0){
                     oddArray[idx]=arr[i];
                     idx++;
-                } 
+                  } 
             }
             return oddArray;
         }
@@ -78,20 +79,55 @@ public class OneDimensionalArray{
         return secondMax;
        }
 
-        public void arrayDemo(){
+       // Move zeros to the end of an array
+       public int[] moveZerosToEnd(int[] arr){
+            int j = 0;
+            for(int i=0; i<arr.length; i++){
+                if(arr[i]!=0 && arr[j] == 0){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+                if(arr[j]!=0){
+                    j++;
+                }
+            }
+            return arr;
+       }
+       // Resize an array
+       public int[] resize(int[] arr,int length){
+        int newArray[] = new int[length];
+        for(int i=0;i<length;i++){
+            newArray[i] = arr[i];
+        }
+        return newArray;
+       }
+
+       public void arrayDemo(){
             int[] myArray = new int[5];
             printArray(myArray);
+       }
+
+       public int findMissingNumber(int arr[]){
+        int n = arr.length+1;
+        int sum = n * (n+1) / 2;
+        for(int num:arr){
+            sum = sum - num;
         }
-    
+        return sum;
+       }
 
     public static void main(String[] args){
         OneDimensionalArray arrutil = new OneDimensionalArray();
         //arrutil.arrayDemo();
-        int[] nums = {1,2,3,4,20,5,6,7,8,9};
+        int[] nums = {1,2,3,4,6};
         //arrutil.printArray(arrutil.removeEven(nums));
         //arrutil.printArray(arrutil.reversArray(nums,0,nums.length-1));
-        System.out.println(arrutil.findSecondMax(nums));
-
+        int[] zeros = {1,2,0,3,4,5,0,6,7,0};
+        //System.out.println(arrutil.findSecondMax(nums));
+        //arrutil.printArray(arrutil.moveZerosToEnd(zeros));
+        // arrutil.printArray(arrutil.resize(zeros,5));
+        System.out.println(arrutil.findMissingNumber(nums));
     }
 
 }
