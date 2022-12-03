@@ -10,6 +10,13 @@ public class OneDimensionalArray{
         }
 
         // Remove even integers from an array
+        /*
+        Since an array has a fixed number of elements, we need to 
+        first iterate through all the elements in the array and count those that are
+        odd, then initialize a new array with the length of the odd array and
+        finally add the odd numbers to the newly initialized odd array
+         */
+
         int[] removeEven(int arr[]){
             int n = arr.length;
             int oddArrayLength = 0;
@@ -30,7 +37,16 @@ public class OneDimensionalArray{
         }
 
         // Reverse an array in Java
-        public int[] reversArray(int[] numbers,int start, int end){
+        /*
+        You need to keep track of both the first and the last indices and items
+        in the array. Also a temporary value is needed to keep track of the start
+        index so that we still have a reference for it when it is reassigned to
+        the item in the last index. We then loop through the array checking if the 
+        start index is less than the last index, ass we increment the start index and decrement 
+        the last
+        */
+
+        public void reverseArray(int[] numbers,int start, int end){
             int temp;
             while(start < end){
                 temp = numbers[start];
@@ -39,13 +55,20 @@ public class OneDimensionalArray{
                 start++;
                 end--;
             }
-            return numbers;
         }
 
         // find minimum value in an array
+        /*
+        It involves comparing the current value of an array with the
+        next value in the array. Initially, we set the first element in the array as the
+        minimum value.  If the next element is less than the current element, then we set the new
+        minimum value to be equal to the next element, otherwise we continue looping through the elements
+        of the array and make the same comparison till the end, and return the minimum value. 
+
+        */
         public int findMin(int arr[]){
             int minVal = arr[0];
-            for(int i=0;i<arr.length;i++){
+            for(int i=1;i<arr.length;i++){
                 if(arr[i]<minVal){
                     minVal = arr[i];
                 }
@@ -65,6 +88,14 @@ public class OneDimensionalArray{
         }
 
        // Find the second maximum value in an array
+       /*
+       First the max and second max variables are assigned to the most minimum value.
+       we then iterate through the array and if a value is larger than our max value,
+       we assign that value to become our max value, we also assign our second max
+       value to be equal to our previous max. We also check if a value is greater than
+       second max and not equal to max (i.e not a duplicate) and we assign that to the
+       second max value
+       */
        public int findSecondMax(int arr[]){
         int max = Integer.MIN_VALUE;
         int secondMax = Integer.MIN_VALUE;
@@ -80,6 +111,16 @@ public class OneDimensionalArray{
        }
 
        // Move zeros to the end of an array
+       /*
+       Here we need two pointers, one keeps track of non-zero elements in the array, while
+       the other zero elements in the array. The non-zero pointer traverses the array during 
+       each iteration, while the zero pointer only traverses the array if the current value is 
+       non-zero. In the event that the zero pointer is on a zero element and the non-zero pointer
+       is on a non-zero element, we create a temporary variable to store the non-zero pointer value then
+       we assign zero pointer value to the non-zero pointer value, and finally assign the temporary
+       variable to the zero pointer value
+       */
+
        public int[] moveZerosToEnd(int[] arr){
             int j = 0;
             for(int i=0; i<arr.length; i++){
@@ -95,9 +136,14 @@ public class OneDimensionalArray{
             return arr;
        }
        // Resize an array
+       /*
+       We create a new array and give it the length we want to assign it
+       we loop through our existing array and assign the corresponding values in at the 
+       current index to the indices in our new array
+       */
        public int[] resize(int[] arr,int length){
         int newArray[] = new int[length];
-        for(int i=0;i<length;i++){
+        for(int i=0;i<arr.length;i++){
             newArray[i] = arr[i];
         }
         return newArray;
@@ -107,7 +153,13 @@ public class OneDimensionalArray{
             int[] myArray = new int[5];
             printArray(myArray);
        }
-
+       
+       // Find the missing number in a range of natural numbers starting from 1
+       /*
+       We take a mathematical approach of finding the sum of the first n natural numbers
+       and we'll subtract this natural number sum from the sum of our exisiting array of
+       numbers to find the missing number.
+       */
        public int findMissingNumber(int arr[]){
         int n = arr.length+1;
         int sum = n * (n+1) / 2;
@@ -116,6 +168,17 @@ public class OneDimensionalArray{
         }
         return sum;
        }
+
+       // Check if a given string is a palindrome
+       /*
+       A palindrome is a word that has the same meaning when it is reversed e.g madam, noon
+       To check if a string is a palindrome, we conver the string into a charachter array,
+       then set the start pointer to zero and the end pointer to the index of the last item in
+       the array. We then check whether the start index is less than the end index. if 
+       so, we compare the charachter in the index of the start pointer with that of the end pointer
+       if they are not equal, we return false, meaning the string is not a palindrome. Otherwise, 
+       we increment the start index by one and decrement the end index by one. 
+       */
 
        public boolean isPalindrome(String word){
         char[] charArray = word.toCharArray();
@@ -134,14 +197,16 @@ public class OneDimensionalArray{
         OneDimensionalArray arrutil = new OneDimensionalArray();
         //arrutil.arrayDemo();
         int[] nums = {1,2,3,4,6};
+        arrutil.printArray(nums);
+        arrutil.reverseArray(nums,0,nums.length-1);
+        arrutil.printArray(nums);
         //arrutil.printArray(arrutil.removeEven(nums));
         //arrutil.printArray(arrutil.reversArray(nums,0,nums.length-1));
-        int[] zeros = {1,2,0,3,4,5,0,6,7,0};
+        //int[] zeros = {1,2,0,3,4,5,0,6,7,0};
         //System.out.println(arrutil.findSecondMax(nums));
         //arrutil.printArray(arrutil.moveZerosToEnd(zeros));
         // arrutil.printArray(arrutil.resize(zeros,5));
         //System.out.println(arrutil.findMissingNumber(nums));
-        System.out.println(arrutil.isPalindrome("noon"));
-
+        // System.out.println(arrutil.isPalindrome("noon"));
     }
 }
