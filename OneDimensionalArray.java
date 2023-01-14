@@ -15,7 +15,7 @@ public class OneDimensionalArray{
         first iterate through all the elements in the array and count those that are
         odd, then initialize a new array with the length of the odd array and
         finally add the odd numbers to the newly initialized odd array
-         */
+        */
 
         int[] removeEven(int arr[]){
             int n = arr.length;
@@ -119,28 +119,47 @@ public class OneDimensionalArray{
        is on a non-zero element, we create a temporary variable to store the non-zero pointer value then
        we assign zero pointer value to the non-zero pointer value, and finally assign the temporary
        variable to the zero pointer value
-       */
+       */ 
 
        public int[] moveZerosToEnd(int[] arr){
-            int j = 0;
+            int zeroPointer = 0;
             for(int i=0; i<arr.length; i++){
-                if(arr[i]!=0 && arr[j] == 0){
+                if(arr[i]!=0 && arr[zeroPointer] == 0){
                     int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+                    arr[i] = arr[zeroPointer];
+                    arr[zeroPointer] = temp;
                 }
-                if(arr[j]!=0){
-                    j++;
+                if(arr[zeroPointer]!=0){
+                    zeroPointer++;
                 }
             }
             return arr;
        }
+
+        //[0,1,0,2,4,0,0] 
+
+        public int[] moveZerosToStart(int[] arr){
+            int zeroPointer = arr.length-1;
+            for(int i=arr.length-1; i!= -1; i--){
+                 if(arr[i]!=0 && arr[zeroPointer] == 0){
+                    int temp = arr[i];
+                    arr[i] = arr[zeroPointer];
+                    arr[zeroPointer] = temp;
+                }
+                if(arr[zeroPointer]!=0){
+                    zeroPointer--;
+                }
+            }
+            return arr;
+       }
+
        // Resize an array
        /*
        We create a new array and give it the length we want to assign it
        we loop through our existing array and assign the corresponding values in at the 
        current index to the indices in our new array
        */
+       
        public int[] resize(int[] arr,int length){
         int newArray[] = new int[length];
         for(int i=0;i<arr.length;i++){
@@ -160,6 +179,7 @@ public class OneDimensionalArray{
        and we'll subtract this natural number sum from the sum of our exisiting array of
        numbers to find the missing number.
        */
+
        public int findMissingNumber(int arr[]){
         int n = arr.length+1;
         int sum = n * (n+1) / 2;
@@ -196,17 +216,18 @@ public class OneDimensionalArray{
     public static void main(String[] args){
         OneDimensionalArray arrutil = new OneDimensionalArray();
         //arrutil.arrayDemo();
-        int[] nums = {1,2,3,4,6};
-        arrutil.printArray(nums);
-        arrutil.reverseArray(nums,0,nums.length-1);
-        arrutil.printArray(nums);
+        //int[] nums = {1,2,3,4,6};
+        //arrutil.printArray(nums);
+        //arrutil.reverseArray(nums,0,nums.length-1);
+        //arrutil.printArray(nums);
+        
         //arrutil.printArray(arrutil.removeEven(nums));
         //arrutil.printArray(arrutil.reversArray(nums,0,nums.length-1));
         //int[] zeros = {1,2,0,3,4,5,0,6,7,0};
         //System.out.println(arrutil.findSecondMax(nums));
-        //arrutil.printArray(arrutil.moveZerosToEnd(zeros));
-        // arrutil.printArray(arrutil.resize(zeros,5));
+        //arrutil.printArray(arrutil.moveZerosToStart(zeros));
+        //arrutil.printArray(arrutil.resize(zeros,5));
         //System.out.println(arrutil.findMissingNumber(nums));
-        // System.out.println(arrutil.isPalindrome("noon"));
+        //System.out.println(arrutil.isPalindrome("noon"));
     }
 }
