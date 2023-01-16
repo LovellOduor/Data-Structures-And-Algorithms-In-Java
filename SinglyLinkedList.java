@@ -407,7 +407,7 @@ public class SinglyLinkedList{
            return null;
     }
 
-// remove a loop from a singly linked list 
+ // remove a loop from a singly linked list 
  /*
  To remove a loop from a singly linked list, we need to implement floyd cycles detection algorithm,
  the only difference is instead of checking that the start node value is equal to the slow pointer to find 
