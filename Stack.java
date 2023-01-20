@@ -43,6 +43,7 @@ public class Stack{
 
     public static void main(String[] args){
         Stack st = new Stack();
+        
         st.push(15);
         st.push(20);
         st.pop();
