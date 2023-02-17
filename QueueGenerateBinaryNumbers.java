@@ -1,5 +1,8 @@
 import java.util.Queue;
 import java.util.LinkedList;
+/*
+
+*/
 public class QueueGenerateBinaryNumbers{
     public static void main(String[] args){
         Queue<String> q = new LinkedList<String>();
