@@ -43,7 +43,7 @@ public class BinarySearchTree{
         if(root == null || root.data == key){
             return root;
         }
-        if(key<root.left.data){
+        if(key<root.data){
             return search(root.left,key);
         }else{
             return search(root.right,key);
