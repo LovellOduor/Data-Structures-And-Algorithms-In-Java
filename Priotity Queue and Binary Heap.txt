@@ -1,0 +1,31 @@
+Priority Queue
+Priority queue is a data structure that allows us to find minimum/maximum elements
+in a collection of elements in constant time.
+It supports the following operations.
+- Insert(key) - Insert a key into the priority queue.
+- deleteMax()/deleteMin() - return and remove the largest/smallest key.
+- getMax()/getMin() - return largest/smallest key.
+
+Binary Heap
+- A datastructure that helps in implementing the priority queue operations efficiently.
+- It is a complete binary tree in which each node value is >= or <= 
+  than the values of its children.
+
+           1                      7
+          / \                    / \  
+        2     3                6     5
+       / \   / \              / \   / \
+      4   5 6   7            4   3 2   1
+       Min Heap                Max Heap
+
+Complete binary tree
+- A binary tree where all levels are completley filled except last level and last level 
+  has nodes in such a way the left side is never empty.
+
+           1                      7
+          / \                    / \  
+        2     3                6     5
+       / \   / \              / \   / \
+      4   5 6                    3 2   1
+  Complete binary tree    Incomplete binary tree
+
