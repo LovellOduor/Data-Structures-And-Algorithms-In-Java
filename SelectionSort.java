@@ -18,6 +18,7 @@ public class SelectionSort{
         arr[x] = arr[y];
         arr[y] = temp;
     }
+    
     public void sort(int[] arr, int arrLength){
         for(int sortedIdx = 0; sortedIdx < arrLength - 1; sortedIdx++){// sorted Loop
             int minIdx = sortedIdx;
