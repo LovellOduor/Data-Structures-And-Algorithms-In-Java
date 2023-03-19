@@ -136,6 +136,35 @@ public class OneDimensionalArray{
             return arr;
        }
 
+       public void moveZerosToEnd2(int[] arr){
+            int zeroPointer = arr.length-1;
+            int i = 0;
+            while(i < zeroPointer){
+                if(arr[i] == 0){
+                    int temp = arr[zeroPointer];
+                    arr[zeroPointer] = arr[i];
+                    arr[i] = temp; 
+                    zeroPointer--;
+                }else{
+                    i++;
+                }
+            }
+       }
+
+       public void moveZerosToStart2(int[] arr){
+            int zeroPointer = 0;
+            int i = 0;
+            while(i < arr.length){
+                if(arr[i] == 0){
+                    int temp = arr[zeroPointer];
+                    arr[zeroPointer] = arr[i];
+                    arr[i] = temp; 
+                    zeroPointer++;
+                }
+                i++;
+            }
+       }
+
         //[0,1,0,2,4,0,0] 
 
         public int[] moveZerosToStart(int[] arr){
@@ -223,9 +252,10 @@ public class OneDimensionalArray{
         
         //arrutil.printArray(arrutil.removeEven(nums));
         //arrutil.printArray(arrutil.reversArray(nums,0,nums.length-1));
-        //int[] zeros = {1,2,0,3,4,5,0,6,7,0};
+        int[] zeros = {1,2,0,3,4,5,0,6,7,0};
+        arrutil.moveZerosToStart2(zeros);
         //System.out.println(arrutil.findSecondMax(nums));
-        //arrutil.printArray(arrutil.moveZerosToStart(zeros));
+        arrutil.printArray(zeros);
         //arrutil.printArray(arrutil.resize(zeros,5));
         //System.out.println(arrutil.findMissingNumber(nums));
         //System.out.println(arrutil.isPalindrome("noon"));

@@ -16,7 +16,7 @@ Binary Heap
         2     3                6     5
        / \   / \              / \   / \
       4   5 6   7            4   3 2   1
-       Min Heap                Max Heap
+        Min Heap               Max Heap
 
 Complete binary tree
 - A binary tree where all levels are completley filled except last level and last level 
@@ -28,4 +28,3 @@ Complete binary tree
        / \   / \              / \   / \
       4   5 6                    3 2   1
   Complete binary tree    Incomplete binary tree
-
