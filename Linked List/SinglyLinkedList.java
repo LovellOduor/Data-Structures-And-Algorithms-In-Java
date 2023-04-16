@@ -29,7 +29,7 @@ public class SinglyLinkedList{
     /*
     This requires we define two pointers, a fast pointer that will traverse the list twice as fast as
     a slow pointer, both of which are initialized to the head pointer. 
-    in a while loop we check whether the fast pointer is null or it's next pointer is null, if not,
+    In a while loop we check whether the fast pointer is null or it's next pointer is null, if not,
     then we traverse the slow pointer to the next node and the fast pointer to the next next node of it's next node
     if the fast pointer or it's next node evaluates to null, then we return the slow pointer as the middle node
     */
@@ -167,7 +167,7 @@ public class SinglyLinkedList{
     // Delete a node at any position on the List
     /*
     First we check whether the we are inserting in the first node. 
-    If so we simply set head to point to its next node  else
+    If so we simply set head to point to its next node else
     we create a count and through a while loop check whether we have arrived at the previous position
     before the current position that we want to delete. If we arrive at that position, then we set the
     next pointer of the previous position, to point to the next pointer of the current position
@@ -207,7 +207,7 @@ public class SinglyLinkedList{
 
     // Reverse a Linked List
     /*
-    This entails changging the direction of the next pointers and setting the last node to be
+    This entails changing the direction of the next pointers and setting the last node to be
     head. Set pointers for the current to point to head, previous to null and next node set to null.
     In a while loop, we check whether the current pointer is null. If not then we set the
     next pointer to the next node in the list, we set the next pointer of the current node to the 
@@ -515,7 +515,8 @@ public class SinglyLinkedList{
         // sll.insertLast(7);
         // sll.insert(5,2);
         // sll.deleteFirst();
-        // sll.displayList();
+        sll.deleteLast();
+        sll.displayList();
         // sll.delete(3);
         // sll.displayList();
         // sll.reverse();

@@ -8,7 +8,17 @@ public class StackNextGreaterElement{
     */
     // Solution
     /*
-    
+    So we start looping the array from the end because 
+    the last item has no greater element to it's right.
+    if the stack is not empty
+    We then begin by checking if numbers in the stack are less or equal
+    to the current element if so then we remove them.
+    if the stack is not empty after this then 
+    the top element of the stack is greater than the element 
+    in the current index of the array.
+    if its empty then we assign -1 to the curren element in the result array
+    on every iterration we push the current element in the numbers array 
+    to the stack.
     */
     public static int[] nextGreaterElement(int[] nums){
         int[] result = new int[nums.length];
@@ -21,7 +31,7 @@ public class StackNextGreaterElement{
                 }
             }
 
-            if(numbers.isEmpty() == true){
+            if(numbers.isEmpty()){
                 result[i] = -1;
             }else{
                 result[i] = numbers.peek();

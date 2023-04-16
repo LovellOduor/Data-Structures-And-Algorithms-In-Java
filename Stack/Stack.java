@@ -1,4 +1,4 @@
-/*
+/* Stack
 It is a linear data structure in which insertions and deletions are done at one end called as top.
 It implements the LiFo data structure. Last In First Out.
 */

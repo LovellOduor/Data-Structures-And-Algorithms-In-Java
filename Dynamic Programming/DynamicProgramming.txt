@@ -1,0 +1,42 @@
+Dynamic Programming.
+- Dynamic programming is an optimization over recurrsion.
+- Basically it is recursion + memorization.
+  memorization here means storing the result of a subproblem.
+
+- It is a technique through which a complex problem is solved by.
+1. Breaking a complex problem into sub-problems.
+2. Solving the sub-problems ans storing their results.
+3. Re-use stored result if sub-problem re-occurs/overlaps.
+4. Using solutions to smaller problems, build up solutions to larger problems.
+
+Properties of dynamic programming problems
+- These are properties that if possesed by a problem
+make it possible for the problem to be solved by dynamic
+programming. 
+
+Optimal Substructure
+- A given problem has optimal substructure property if optimal
+solution of the given problem can be obtained by using the
+optimal solution of it's sub-problems. 
+For example:
+fib(n) = fib(n-1) + fib(n-2)
+
+Overlapping Sub-problems
+A given problem has overlapping subproblems property if 
+solution of the given problem is obtained by solving the same 
+subproblems multiple times. 
+
+Approaches to solving dynamic programming problems
+1.  Bottom up approach or Tabulation Method
+    We try to solve smaller sub-problems use their solution to build on and arrive at solutions to bigger 
+    sub-problems.
+    This is also caled tabulation method because the previous solutions to the sub-problem are stored in a table.
+    And they help us arrive at a solution to the main problem.
+
+2.     // Top down approach or Memorization
+    /*
+    We break the large problem int multiple sub-problems.
+    Each of the sub-problems are solved and solutions are remebered.
+    If the sub-problem is slved already, reuse the answer.
+    Else solve the sub-problem and store the result.
+    */ 

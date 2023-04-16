@@ -5,7 +5,7 @@ It is charachterized by the presence of both a head and tail pointer.
 The list nodes in a doubly linked list have a refrence to both the next and previous node
 on the list, as well as a variable to store data. 
 This, coupled with the  presence of a tail node makes it possible to traverse
-a doubly linked list in both directions. The lenght property also keeps track of items in the list.
+a doubly linked list in both directions. The length property also keeps track of items in the list.
 */
 
 class DoublyLinkedList{
