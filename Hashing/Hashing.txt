@@ -1,0 +1,59 @@
+Hash Functions
+
+A Hash Function simply takes an arbitrary size key
+and provides fixed size value also called as index. 
+
+Types of Hash Functions
+
+Modular Hash Function
+A Modular Hash function simply takes a key and size,
+returns remainder by dividing key by size.
+
+The remainder is used as an index to store the key in an array of provided
+size.
+
+Simple Modular Hash Function
+
+keys {5,1,10,26,99}
+
+Modular Hash Function 
+
+index = h(key) = key % size
+size = 10
+
+Terms
+
+- Keys are inputs that you want to be hashed.
+- Index is the output of a hash function.
+- Size is the size of the array that will map the index
+  (Hash output) to the original value stored in the array.
+
+  For example the Modular Hashed output of the
+  array keys above will be
+
+  [10,1,_,_,_,5,26,_,_,99]
+
+  Collision
+
+  This is a situation whereby multiple keys are 
+  mapped to the same index. For example
+
+  10 % 10 = 0 
+  100 % 10 = 0
+
+  This can be fixed with some techniques to be 
+  discussed later.
+
+  Hash Table
+
+  - It is a generalized form of an Array.
+  - It stored data in key-value pair.
+  - It converts key to an Index using hash function.
+  - Taking the index we store key-value in an array.
+  - The primary operations supported are:-
+    put(key,value) - Adds key-value pair against unique key.
+    get(key) - Get value for the provided key.
+    remove(key) - Removes the Key-value pair from the Hash Table.
+  - Average runtime is of O(1).
+  - Java collections class has HashMap if we want to deal with key-value 
+    pairs and HashSet if we want to deal with only keys. 
