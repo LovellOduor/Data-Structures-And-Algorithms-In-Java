@@ -28,7 +28,7 @@ public class StringUtil{
 
     public static void main(String[] args){
         StringUtil sutil = new StringUtil();
-        //System.out.println(sutil.isPalindrome("noon"));
+        // System.out.println(sutil.isPalindrome("noon"));
         System.out.println(sutil.removeVowels("hello how are you"));
 
     }
