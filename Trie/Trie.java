@@ -10,7 +10,7 @@ public class Trie{
         private TrieNode[] children;
         private boolean isWord;
         public TrieNode(){
-            children = new TrieNode[26]; // store english words a->z
+            children = new TrieNode[26]; // store english words a -> z
             isWord = false;
         }
     }
@@ -36,9 +36,7 @@ public class Trie{
         return false;
     }
 
-
-
     public static void main(String[] args){
-
+    
     }
 }
