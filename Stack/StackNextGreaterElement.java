@@ -24,7 +24,6 @@ public class StackNextGreaterElement{
         int[] result = new int[nums.length];
         Stack<Integer> numbers = new Stack<>();
         for(int i=nums.length -1; i >= 0; i--){
-
             if(!numbers.isEmpty()){
                 while(!numbers.isEmpty() && numbers.peek() <= nums[i]){
                     numbers.pop();

@@ -1,14 +1,14 @@
 public class ProductofArray{
-    /**
-    Product of an array except self (the product excludes the element at the current index of the array)
-    Given an array of integers arr[] return an array result[]
-    such that result[i] is equal to the product of all elements of
-    arr except arr[i]. The product fits in 32-bit integer. The algorithm
-    should run in O(n) time and without using the division operator.    
-    
+/**
+ *  Product of an array except self (the product excludes the element at the current index of the array)
+ *  Given an array of integers arr[] return an array result[]
+ *  such that result[i] is equal to the product of all elements of
+ *  arr except arr[i]. The product fits in 32-bit integer. The algorithm
+ *  should run in O(n) time and without using the division operator.    
+ 
     input:arr = {1,2,3,4}
     output:result = {24,12,8,6}
-    */
+*/
 
 /**
  * The solution comprises of two arrays, the first, we iterate from the 
@@ -40,4 +40,5 @@ public class ProductofArray{
             System.out.print(r+", ");
         }
     }
+    
 }
