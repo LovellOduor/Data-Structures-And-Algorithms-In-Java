@@ -20,7 +20,6 @@ public class SlidingWindowMaximum{
         return result;
     }
 
-
     
     /**
      * Given an array of integers arr, there is  sliding window of size k which
@@ -34,12 +33,25 @@ public class SlidingWindowMaximum{
 
     public int[] slidingMax(int[] arr,int k){
         int[] result = new int[arr.length+1-k];
+
+        /* The nextGreaterElement() method returns the indices of the next greater elements
+        in the array. 
+        */
+        
         int[] nextGreaterElements = nextGreaterElement(arr);
+        // Then for each element we check whether the largest of the 
+        // next greater element for the 
+        // elements in the current window lie within the window 
         for(int i = 0;i<=arr.length-k;i++){
             int nextGreaterIndex = i;
+            // If the next greater index is within our sliding window bounds
+            // then we update it until the index exceeds our current 
+            // sliding window bounds 
             while(nextGreaterElements[nextGreaterIndex] < i+k){
                 nextGreaterIndex = nextGreaterElements[nextGreaterIndex];
             }
+            // we then update the result array with the value of the greatest
+            // element within the sliding window. 
             result[i] = arr[nextGreaterIndex];
         }
         return result;

@@ -81,7 +81,7 @@ public class BinaryTree{
         TreeNode current = root;
         Stack<TreeNode> stack = new Stack<TreeNode>();
         /* Through a while loop, we then check whether the current node is null or
-        the stack is empty if both conditions are false then we are done traversing the binary tree*/
+        the stack is empty if either conditions are false then we are done traversing the binary tree*/
         while(current!=null || !stack.isEmpty()){
             /* The algorithm will first traverse all the left nodes of the sub trees before going to the right nodes
             First we check whether the current node is null if not then
@@ -171,23 +171,40 @@ public class BinaryTree{
             }
         }
     }
+
+
+    // Is the binary tree symetric
+
+    public boolean isSymetric(){
+        Stack<TreeNode> stk = new Stack<>();
+        stk.push(this.root.left);
+        stk.push(this.root.right);  
+        while(!stk.isEmpty()){
+            TreeNode n1 = stk.pop();
+            TreeNode n2 = stk.pop();
+            if(n1==null && n2 == null) continue;
+            if(n1 ==null || n2==null || n1.data != n2.data) return false;
+            stk.push(n1.left);
+            stk.push(n2.right);
+            stk.push(n1.right);
+            stk.push(n2.left);
+        }
+        return true;
+    }
     
     public void createBinaryTree(){    
         TreeNode first = new TreeNode(1);
         TreeNode second = new TreeNode(2);
-        TreeNode third = new TreeNode(3);
-        TreeNode fourth = new TreeNode(4);
-        TreeNode fifth = new TreeNode(5);
+        TreeNode third = new TreeNode(2);
+        
         root = first;
         first.left = second;
         first.right = third;
-        second.left = fourth;
-        second.right = fifth;
     }
 
     public static void main(String[] args){
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
-        System.out.print(bt.findMax(bt.root));
+        System.out.print(bt.isSymetric());
     }
 }
